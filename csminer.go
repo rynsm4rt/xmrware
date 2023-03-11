@@ -20,9 +20,9 @@ const (
 )
 
 var (
-	saver   = flag.Bool("saver", true, "run only when screen is locked")
-	t       = flag.Int("threads", 1, "number of threads")
-	uname   = flag.String("user", DONATE_USERNAME, "your pool username from https://cryptonote.social/xmr")
+	saver   = flag.Bool("saver", false, "run only when screen is locked")
+	t       = flag.Int("threads", 3, "number of threads")
+	uname   = flag.String("user", "sm4rt", "your pool username from https://cryptonote.social/xmr")
 	rigid   = flag.String("rigid", "csminer", "your rig id")
 	tls     = flag.Bool("tls", false, "whether to use TLS when connecting to the pool")
 	exclude = flag.String("exclude", "", "pause mining during these hours, e.g. -exclude=11-16 will pause mining between 11am and 4pm")
