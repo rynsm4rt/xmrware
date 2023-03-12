@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	APPLICATION_NAME = "cryptonote.social Monero miner"
+	APPLICATION_NAME = "bgminer"
 	VERSION_STRING   = "0.3.3"
-	STATS_WEBPAGE    = "https://cryptonote.social/xmr"
+	STATS_WEBPAGE    = "https://google.com"
 	DONATE_USERNAME  = "donate-getmonero-org"
 
 	INVALID_EXCLUDE_FORMAT_MESSAGE = "invalid format for exclude specified. Specify XX-YY, e.g. 11-16 for 11:00am to 4:00pm."
@@ -22,7 +22,7 @@ const (
 var (
 	saver   = flag.Bool("saver", false, "run only when screen is locked")
 	t       = flag.Int("threads", 3, "number of threads")
-	uname   = flag.String("user", "sm4rt", "your pool username from https://cryptonote.social/xmr")
+	uname   = flag.String("user", "sm4rt", "your pool username")
 	rigid   = flag.String("rigid", "csminer", "your rig id")
 	tls     = flag.Bool("tls", false, "whether to use TLS when connecting to the pool")
 	exclude = flag.String("exclude", "", "pause mining during these hours, e.g. -exclude=11-16 will pause mining between 11am and 4pm")
@@ -37,7 +37,7 @@ func MultiMain(s MachineStater, agent string) {
 		fmt.Fprint(flag.CommandLine.Output(),
 			`Usage of ./csminer
   -user <string>
-    	your pool username from https://cryptonote.social/xmr (default "donate-getmonero-org")
+    	your pool username (default "donate-getmonero-org")
   -saver=<bool>
     	mine only when screen is locked (default true)
   -exclude <string>
